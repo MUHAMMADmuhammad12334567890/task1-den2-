@@ -8,10 +8,14 @@ align-items: center;
 
 }
 
+.product_img {
+  width: 40%;
+}
 
      
 .list_item_bloc {
     width: 30%;
+    text-align: center;
 
 }
 

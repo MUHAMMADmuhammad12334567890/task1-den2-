@@ -1,61 +1,33 @@
 import main from "./main.css";
 import React from "react";
-
+import PropTypes  from "prop-types";
 const Main = (props) => {
+  let data = props.data.mainObject;
 
   return (
     <div className="main_conteyner">
-          <div className="list_item_bloc">
-        <img className="product_img" src={props.data.mainObject[0].image} alt='Товар'/>
-        <div className="pric_list2">{props.data.mainObject[0].price}</div>
-        <div className="old_pric_list3">{props.data.mainObject[0].oldPrice}</div>
-        <div className="name_list4">{props.data.mainObject[0].name}</div>
-        <button className="butoon_list1">{props.data.mainObject[0].button}</button>
-        
-          </div>
 
-          <div className="list_item_bloc">
-        <img className="product_img" src={props.data.mainObject[1].image} alt='Товар'/>
-        <div className="pric_list2">{props.data.mainObject[1].price}</div>
-        <div className="old_pric_list3">{props.data.mainObject[1].oldPrice}</div>
-        <div className="name_list4">{props.data.mainObject[1].name}</div>
-        <button className="butoon_list1">{props.data.mainObject[1].button}</button>
+      {data.map((item) => {
+        return (
+          <div key={item.id} className="list_item_bloc">
+            <img className="product_img" src={item.image} alt="Товар" /> 
+            <p className="NameProduct">{item.name}</p>
+            <p className="price_class">{'Цена: '}{item.price}</p> 
+            <p className="Left_Products">{'Наличи: '}{item.left}{' Штук'}</p>
           </div>
+        );
+      })}
 
-          <div className="list_item_bloc">
-        <img className="product_img" src={props.data.mainObject[2].image} alt='Товар'/>
-        <div className="pric_list2">{props.data.mainObject[2].price}</div>
-        <div className="old_pric_list3">{props.data.mainObject[2].oldPrice}</div>
-        <div className="name_list4">{props.data.mainObject[2].name}</div>
-        <button className="butoon_list1">{props.data.mainObject[2].button}</button>
-          </div>
-
-          <div className="list_item_bloc">
-        <img className="product_img" src={props.data.mainObject[3].image} alt='Товар'/>
-        <div className="pric_list2">{props.data.mainObject[3].price}</div>
-        <div className="old_pric_list3">{props.data.mainObject[3].oldPrice}</div>
-        <div className="name_list4">{props.data.mainObject[3].name}</div>
-        <button className="butoon_list1">{props.data.mainObject[3].button}</button>
-          </div>
-
-          <div className="list_item_bloc">
-        <img className="product_img" src={props.data.mainObject[4].image} alt='Товар'/>
-        <div className="pric_list2">{props.data.mainObject[4].price}</div>
-        <div className="old_pric_list3">{props.data.mainObject[4].oldPrice}</div>
-        <div className="name_list4">{props.data.mainObject[4].name}</div>
-        <button className="butoon_list1">{props.data.mainObject[4].button}</button>
-          </div>   
-
-          <div className="list_item_bloc">
-        <img className="product_img" src={props.data.mainObject[5].image} alt='Товар'/>
-        <div className="pric_list2">{props.data.mainObject[5].price}</div>
-        <div className="old_pric_list3">{props.data.mainObject[5].oldPrice}</div>
-        <div className="name_list4">{props.data.mainObject[5].name}</div>
-        <button className='butoon_list1'>{props.data.mainObject[5].button}</button>
-          </div>
- 
     </div>
   );
+Main.propTypes = {
+    image: PropTypes.string,
+    name: PropTypes.string,
+    price: PropTypes.number,
+    left: PropTypes.number,
+
+};
 };
 
 export default Main;
+
