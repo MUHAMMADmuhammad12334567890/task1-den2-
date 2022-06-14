@@ -1,0 +1,30 @@
+.main_conteyner {
+   display: flex;
+   justify-content: center;
+flex-wrap: wrap;
+   width: 100%;
+   margin-left: 10%;
+align-items: center;
+
+}
+
+
+     
+.list_item_bloc {
+    width: 30%;
+
+}
+
+
+.butoon_list1 {
+background-color: blue;
+height: 30px;
+ 
+  width: 90px;
+}
+
+.old_pric_list3 {
+    text-decoration: line-through;
+
+  
+}
